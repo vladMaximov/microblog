@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- documentation at http://getbootstrap.com/docs/4.4/, alternative themes at https://bootswatch.com/ -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <!-- fontawesome icons 5 -->
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+      {% block scripts %}{% endblock %}
+
+      <title>{% block title %}{% endblock %}</title>
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid border border-top-0">
+      {% block navbar %}{% endblock %}
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <ul class="flashes">
+          <div class="alert alert-primary border" role="alert">{{ message }}</div>
+        </ul>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+      {% block app_content %}{% endblock %}
+    </div>
+
+  </body>
+</html>

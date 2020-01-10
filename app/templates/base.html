@@ -1,0 +1,49 @@
+{% extends 'bootstrap_base.html' %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}
+
+{% block title %}
+    {% if title %}
+    {{ title }} - Microblog
+    {% else %}
+    Welcome to Microblog
+    {% endif %}
+{% endblock %}
+
+{% block navbar %}
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon data-toggle="tooltip" title="Toggle navigation""></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto mt-2">
+          <li class="nav-item">
+            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('explore') }}" class="nav-link">Explore</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mt-2">
+          {% if current_user.is_anonymous %}
+          <li class="nav-item">
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{{ url_for('user', username=current_user.username) }}" class="nav-link">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+  <!--  </div> -->
+  </nav>
+{% endblock %}
