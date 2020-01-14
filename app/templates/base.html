@@ -9,7 +9,7 @@
     {% if title %}
     {{ title }} - Microblog
     {% else %}
-    Welcome to Microblog
+    {{ _('Welcome to Microblog') }}
     {% endif %}
 {% endblock %}
 
@@ -18,28 +18,28 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon data-toggle="tooltip" title="Toggle navigation""></span>
       </button>
-      <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">{{ _('Microblog') }}</a>
 
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mr-auto mt-2">
           <li class="nav-item">
-            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('index') }}" class="nav-link">{{ _('Home') }}</a>
           </li>
           <li class="nav-item">
-            <a href="{{ url_for('explore') }}" class="nav-link">Explore</a>
+            <a href="{{ url_for('explore') }}" class="nav-link">{{ _('Explore') }}</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-2">
           {% if current_user.is_anonymous %}
           <li class="nav-item">
-            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            <a href="{{ url_for('login') }}" class="nav-link">{{ _('Login') }}</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a href="{{ url_for('user', username=current_user.username) }}" class="nav-link">Profile</a>
+            <a href="{{ url_for('user', username=current_user.username) }}" class="nav-link">{{ _('Profile') }}</a>
           </li>
           <li class="nav-item">
-            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            <a href="{{ url_for('logout') }}" class="nav-link">{{ _('Logout') }}</a>
           </li>
           {% endif %}
         </ul>

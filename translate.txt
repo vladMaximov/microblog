@@ -1,0 +1,83 @@
+install Flask-Babel:
+  pip install flask-babel
+--------------------------------
+Flask-Babel initialize:
+  app/__init__.py:
+  # ...
+  from flask_babel import Babel
+
+  app = Flask(__name__)
+  # ...
+  babel = Babel(app)
+-------------------------------------
+  config.py: Список поддерживаемых языков.
+    class Config(object):
+        # ...
+        LANGUAGES = ['en', 'es']
+--------------------------------------------
+  app/__init__.py: Выбор предпочтительного языка.
+  from flask import request
+
+  # ...
+
+  @babel.localeselector
+  def get_locale():
+      return request.accept_languages.best_match(app.config['LANGUAGES'])
+--------------------------------------
+Маркировка текстов:
+from flask_babel import _
+# ...
+flash(_('Your post is now live!'))
+
+flash('User {} not found.'.format(username)) Not use!!!
+      Flask-Babel doesn't allowed format string
+Use:
+  flash(_('User %(username)s not found.', username=username))
+
+  Некоторые строковые литералы назначаются вне запроса, как правило, когда
+приложение запускается, поэтому в то время, когда эти тексты оцениваются,
+нет способа узнать, какой язык использовать. Примером этого являются метки,
+связанные с полями формы. Единственное решение для обработки этих текстов —
+найти способ отложить оценку строки до ее использования, которая будет
+находиться под фактическим запросом. Flask-Babel предоставляет
+версию (lazy evaluation) отложенного вычисления _(), которая
+называется lazy_gettext():
+
+from flask_babel import lazy_gettext as _l
+
+class LoginForm(FlaskForm):
+    username = StringField(_l('Username'), validators=[DataRequired()])
+    # ...
+
+__init__.py:
+login = LoginManager(app)
+login.login_view = 'login'
+login.login_message = _l('Please log in to access this page.')
+
+Разметка текстов в шаблонах:
+<h1>File Not Found</h1>
+-->
+<h1>{{ _('File Not Found') }}</h1>
+
+-------------------------------------
+
+
+make file babel.config PyBabel configuration file:
+  [python: app/**.py]
+  [jinja2: app/templates/**.html]
+  extensions=jinja2.ext.autoescape,jinja2.ext.with_
+
+extract all texts:
+  pybabel extract -F babel.cfg -k _l -o messages.pot .
+
+Make language catalog:
+  pybabel init -i messages.pot -d app/translations -l ru
+    creating catalog app/translations/es/LC_MESSAGES/messages.po based on messages.pot
+
+--------------------------------
+  Чтобы собрать все переводы для приложения, вы можете использовать команду
+компиляции pybabel compile следующим образом:
+
+pybabel compile -d app/translations
+compiling catalog app/translations/es/LC_MESSAGES/messages.po to
+app/translations/es/LC_MESSAGES/messages.mo
