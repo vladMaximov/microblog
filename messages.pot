@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-14 22:44+0300\n"
+"POT-Creation-Date: 2020-01-15 22:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,47 +77,47 @@ msgstr ""
 msgid "You post is now live."
 msgstr ""
 
-#: app/routes.py:68
+#: app/routes.py:66
 msgid "Invalid username or password"
 msgstr ""
 
-#: app/routes.py:94
+#: app/routes.py:92
 msgid "Congratulations, you are now a registered user!"
 msgstr ""
 
-#: app/routes.py:136
+#: app/routes.py:134
 msgid "You changes have been saved"
 msgstr ""
 
-#: app/routes.py:150 app/routes.py:166
+#: app/routes.py:148 app/routes.py:164
 #, python-format
 msgid "User %(username)s not found."
 msgstr ""
 
-#: app/routes.py:153
-msgid "You can not folloow youself."
+#: app/routes.py:151
+msgid "You can not follow youself."
 msgstr ""
 
-#: app/routes.py:157
+#: app/routes.py:155
 #, python-format
 msgid "You are following %(username)s."
 msgstr ""
 
-#: app/routes.py:169
-msgid "You can not unfolloow youself."
+#: app/routes.py:167
+msgid "You can not unfollow youself."
 msgstr ""
 
-#: app/routes.py:173
+#: app/routes.py:171
 msgid "You are not following %(username)."
 msgstr ""
 
-#: app/routes.py:186
+#: app/routes.py:184
 msgid ""
 "Check your email for the instructions to                    reset your "
 "password"
 msgstr ""
 
-#: app/routes.py:204
+#: app/routes.py:202
 msgid "Your password has been changed."
 msgstr ""
 
@@ -135,6 +135,11 @@ msgstr ""
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified Sorry for the inconvenience!"
+msgstr ""
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s sayd %(when)s"
 msgstr ""
 
 #: app/templates/base.html:12
@@ -174,11 +179,11 @@ msgstr ""
 msgid "Hi, %(username)s!"
 msgstr ""
 
-#: app/templates/index.html:27
+#: app/templates/index.html:27 app/templates/user.html:35
 msgid "Newer posts"
 msgstr ""
 
-#: app/templates/index.html:36
+#: app/templates/index.html:36 app/templates/user.html:44
 msgid "Older posts"
 msgstr ""
 
@@ -196,5 +201,35 @@ msgstr ""
 
 #: app/templates/login.html:30
 msgid "Click to Reset"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:14
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:17
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:19
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:21
+msgid "Unfollow"
 msgstr ""
 

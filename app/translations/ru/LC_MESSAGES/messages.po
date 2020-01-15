@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-14 22:44+0300\n"
-"PO-Revision-Date: 2020-01-14 22:47+0300\n"
+"POT-Creation-Date: 2020-01-15 22:54+0300\n"
+"PO-Revision-Date: 2020-01-15 22:56+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -21,19 +21,19 @@ msgstr ""
 
 #: app/__init__.py:20
 msgid "Please, log to acsess this page!"
-msgstr "Пожалуйста, войдите для доступа к этой странице!"
+msgstr ""
 
 #: app/forms.py:11 app/forms.py:18 app/forms.py:37
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr ""
 
 #: app/forms.py:12 app/forms.py:20 app/forms.py:65
 msgid "Password"
-msgstr "Пароль"
+msgstr ""
 
 #: app/forms.py:13
 msgid "Remember me"
-msgstr "Напомните мне"
+msgstr ""
 
 #: app/forms.py:14 app/templates/login.html:3
 msgid "Sign in"
@@ -41,161 +41,196 @@ msgstr ""
 
 #: app/forms.py:19 app/forms.py:60
 msgid "Email"
-msgstr "Емайл"
+msgstr ""
 
 #: app/forms.py:21 app/forms.py:66
 msgid "Repeat Password"
-msgstr "Повторите пароль"
+msgstr ""
 
 #: app/forms.py:23 app/templates/register.html:4
 msgid "Register"
-msgstr "Зарегистрироваться"
+msgstr ""
 
 #: app/forms.py:28 app/forms.py:50
 msgid "Please use a different username"
-msgstr "Пожалуйста используйте другое имя пользователя"
+msgstr ""
 
 #: app/forms.py:33
 msgid "Please use a different email address"
-msgstr "Пожалуйста используйте другой Емайл"
+msgstr ""
 
 #: app/forms.py:38
 msgid "About me"
-msgstr "Обо мне"
+msgstr ""
 
 #: app/forms.py:40 app/forms.py:56 app/forms.py:61
 msgid "Submit"
-msgstr "Отправить"
+msgstr ""
 
 #: app/forms.py:54
 msgid "Say something"
-msgstr "Скажите что-нибудь"
+msgstr ""
 
 #: app/forms.py:68
 msgid "Request Password Reset"
-msgstr "Запрос на Смену Пароля"
+msgstr ""
 
 #: app/routes.py:27
 msgid "You post is now live."
-msgstr "Ваш пост опубликован"
+msgstr ""
 
-#: app/routes.py:68
+#: app/routes.py:66
 msgid "Invalid username or password"
-msgstr "Неверное имя пользователя или пароль"
+msgstr ""
 
-#: app/routes.py:94
+#: app/routes.py:92
 msgid "Congratulations, you are now a registered user!"
-msgstr "Поздравляем, вы зарегистрированый пользователь"
+msgstr ""
 
-#: app/routes.py:136
+#: app/routes.py:134
 msgid "You changes have been saved"
-msgstr "Ваши изменения были сохранены"
+msgstr ""
 
-#: app/routes.py:150 app/routes.py:166
+#: app/routes.py:148 app/routes.py:164
 #, python-format
 msgid "User %(username)s not found."
-msgstr "Пользователь %(username)s не найден"
+msgstr ""
 
-#: app/routes.py:153
+#: app/routes.py:151
 msgid "You can not follow youself."
-msgstr "Вы не можете подписаться на себя"
+msgstr ""
 
-#: app/routes.py:157
+#: app/routes.py:155
 #, python-format
 msgid "You are following %(username)s."
-msgstr "Вы подписаны на %(username)s."
+msgstr ""
 
-#: app/routes.py:169
+#: app/routes.py:167
 msgid "You can not unfollow youself."
-msgstr "Вы не можете отписаться от себя"
+msgstr ""
 
-#: app/routes.py:173
+#: app/routes.py:171
 msgid "You are not following %(username)."
-msgstr "Вы не подписаны на %(username)s."
+msgstr ""
 
-#: app/routes.py:186
+#: app/routes.py:184
 msgid ""
 "Check your email for the instructions to                    reset your "
 "password"
-msgstr "Проверьте ваш емайл, для инструкций как сменить ваш пароль"
+msgstr ""
 
-#: app/routes.py:204
+#: app/routes.py:202
 msgid "Your password has been changed."
-msgstr "Ваш пароль был изменен"
+msgstr ""
 
 #: app/templates/404.html:4
 msgid "File Not Found"
-msgstr "Файл не найден"
+msgstr ""
 
 #: app/templates/404.html:5 app/templates/500.html:6
 msgid "Back"
-msgstr "Назад"
+msgstr ""
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occured"
-msgstr "Произошла неожиданная ошибка"
+msgstr ""
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified Sorry for the inconvenience!"
-msgstr "Администратор был уведомлен, Извините за неудобства "
+msgstr ""
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s sayd %(when)s"
+msgstr ""
 
 #: app/templates/base.html:12
 msgid "Welcome to Microblog"
-msgstr "Добро пожаловать в Микроблог"
+msgstr ""
 
 #: app/templates/base.html:21
 msgid "Microblog"
-msgstr "Микроблог"
+msgstr ""
 
 #: app/templates/base.html:26
 msgid "Home"
-msgstr "Домой"
+msgstr ""
 
 #: app/templates/base.html:29
 msgid "Explore"
-msgstr "Обозрение"
+msgstr ""
 
 #: app/templates/base.html:35
 msgid "Login"
-msgstr "Логин"
+msgstr ""
 
 #: app/templates/base.html:39
 msgid "Profile"
-msgstr "Профиль"
+msgstr ""
 
 #: app/templates/base.html:42
 msgid "Logout"
-msgstr "Выход"
+msgstr ""
 
 #: app/templates/edit_profile.html:4
 msgid "Edit profile"
-msgstr "Редактирование профиля"
+msgstr ""
 
 #: app/templates/index.html:4
 #, python-format
 msgid "Hi, %(username)s!"
-msgstr "Привет, %(username)s!"
+msgstr ""
 
-#: app/templates/index.html:27
+#: app/templates/index.html:27 app/templates/user.html:35
 msgid "Newer posts"
-msgstr "Новые посты"
+msgstr ""
 
-#: app/templates/index.html:36
+#: app/templates/index.html:36 app/templates/user.html:44
 msgid "Older posts"
-msgstr "Старые посты"
+msgstr ""
 
 #: app/templates/login.html:27
 msgid "New User? "
-msgstr "Новый пользователь? "
+msgstr ""
 
 #: app/templates/login.html:27
 msgid "Click to Register!"
-msgstr "Кликните для Регистрации"
+msgstr ""
 
 #: app/templates/login.html:29
 msgid "Forgot Your Password?"
-msgstr "Забыли Ваш Пароль"
+msgstr ""
 
 #: app/templates/login.html:30
 msgid "Click to Reset"
-msgstr "Кликните для сброса"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr "Пользователь"
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr "Последний раз смотрел"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d подписчивов"
+
+#: app/templates/user.html:14
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d отслеживаемых"
+
+#: app/templates/user.html:17
+msgid "Edit your profile"
+msgstr "Редактировать Профиль"
+
+#: app/templates/user.html:19
+msgid "Follow"
+msgstr "Подписаться"
+
+#: app/templates/user.html:21
+msgid "Unfollow"
+msgstr "Отписаться"
