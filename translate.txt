@@ -78,6 +78,4 @@ Make language catalog:
   Чтобы собрать все переводы для приложения, вы можете использовать команду
 компиляции pybabel compile следующим образом:
 
-pybabel compile -d app/translations
-compiling catalog app/translations/es/LC_MESSAGES/messages.po to
-app/translations/es/LC_MESSAGES/messages.mo
+pybabel compile -d app/translations compiling catalog app/translations/es/LC_MESSAGES/messages.po to app/translations/es/LC_MESSAGES/messages.mo

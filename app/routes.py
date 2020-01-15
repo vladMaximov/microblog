@@ -36,9 +36,7 @@ def index():
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
     # posts = current_user.followed_posts().all()
-    return render_template('index.html', title='Home', form=form,
-                           posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
 
 
 @app.route('/explore')
@@ -150,7 +148,7 @@ def follow(username):
         flash(_('User %(username)s not found.', username=username))
         return redirect(url_for('index'))
     if user == current_user:
-        flash(_('You can not folloow youself.'))
+        flash(_('You can not follow youself.'))
         return redirect(url_for('user', username=username))
     current_user.follow(user)
     db.session.commit()
@@ -166,7 +164,7 @@ def unfollow(username):
         flash(_('User %(username)s not found.', username=username))
         return redirect(url_for('index'))
     if user == current_user:
-        flash(_('You can not unfolloow youself.'))
+        flash(_('You can not unfollow youself.'))
         return redirect(url_for('user', username=username))
     current_user.follow(user)
     db.session.commit()

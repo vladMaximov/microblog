@@ -6,9 +6,9 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_mail import Mail
-from config import Config
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
+from config import Config
 
 
 app = Flask(__name__)
@@ -53,7 +53,8 @@ if not app.debug:
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config(['LANGUAGES']))
+    # return request.accept_languages.best_match(app.config(['LANGUAGES']))
+    return 'ru'
 
 
 from app import routes, models, errors
