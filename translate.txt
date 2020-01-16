@@ -71,11 +71,10 @@ extract all texts:
   pybabel extract -F babel.cfg -k _l -o messages.pot .
 
 Make language catalog:
-  pybabel init -i messages.pot -d app/translations -l ru
-    creating catalog app/translations/es/LC_MESSAGES/messages.po based on messages.pot
+  pybabel init -i messages.pot -d app/translations -l ru creating catalog app/translations/ru/LC_MESSAGES/messages.po based on messages.pot
 
 --------------------------------
   Чтобы собрать все переводы для приложения, вы можете использовать команду
 компиляции pybabel compile следующим образом:
 
-pybabel compile -d app/translations compiling catalog app/translations/es/LC_MESSAGES/messages.po to app/translations/es/LC_MESSAGES/messages.mo
+pybabel compile -d app/translations compiling catalog app/translations/ru/LC_MESSAGES/messages.po to app/translations/ru/LC_MESSAGES/messages.mo
