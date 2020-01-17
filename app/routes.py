@@ -11,7 +11,8 @@ from app.forms import RegistrationForm, EditProfileForm, PostForm, \
         ResetPasswordRequestForm, ResetPasswordForm
 from app.email import send_password_reset_email
 from datetime import datetime
-from flask_babel import _
+from flask import g
+from flask_babel import _, get_locale
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -36,7 +37,9 @@ def index():
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
     # posts = current_user.followed_posts().all()
-    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+    return render_template('index.html', title='Home', form=form,
+                           posts=posts.items, next_url=next_url,
+                           prev_url=prev_url)
 
 
 @app.route('/explore')
@@ -46,9 +49,9 @@ def explore():
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
     # posts = Post.query.order_by(Post.timestamp.desc()).all()
-    next_url = url_for('index', page=posts.next_num) \
+    next_url = url_for('explore', page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('index', page=posts.prev_num) \
+    prev_url = url_for('explore', page=posts.prev_num) \
         if posts.has_prev else None
     return render_template('index.html', title='Explore',
                            posts=posts.items, next_url=next_url,
@@ -121,6 +124,7 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+    g.locale = str(get_locale())
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])

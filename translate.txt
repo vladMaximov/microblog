@@ -78,3 +78,8 @@ Make language catalog:
 компиляции pybabel compile следующим образом:
 
 pybabel compile -d app/translations compiling catalog app/translations/ru/LC_MESSAGES/messages.po to app/translations/ru/LC_MESSAGES/messages.mo
+
+-----------------------------------------
+Update translate:
+(venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
+(venv) $ pybabel update -i messages.pot -d app/translations
